@@ -9,45 +9,55 @@
 <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fjinshopor9450back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
 </head>
 <body class="bg-background text-text-primary">
-    <!-- Navigation Header -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="homepage_premium_interior_design_showcase.html" class="flex items-center space-x-2">
-                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
-                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 2.5L25.5 9 16 13.5 6.5 9 16 4.5zM6 10.5l9 4.5v11l-9-4.5v-11zm11 16v-11l9-4.5v11L17 26.5z"/>
-                        </svg>
-                        <span class="font-playfair font-semibold text-xl text-primary">Jinsho U Varkey</span>
-                    </a>
-                </div>
+    <!-- NEW SIMPLE NAVIGATION -->
+    <nav style="position: fixed; top: 0; left: 0; right: 0; background: white; border-bottom: 2px solid #8B4513; z-index: 10000; height: 70px;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 100%;">
+            <!-- Logo -->
+            <div>
+                <a href="homepage_premium_interior_design_showcase.html" style="display: flex; align-items: center; text-decoration: none;">
+                    <svg style="width: 32px; height: 32px; color: #8B4513; margin-right: 10px;" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 2.5L25.5 9 16 13.5 6.5 9 16 4.5zM6 10.5l9 4.5v11l-9-4.5v-11zm11 16v-11l9-4.5v11L17 26.5z"/>
+                    </svg>
+                    <span style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 20px; color: #8B4513;">Jinsho U Varkey</span>
+                </a>
+            </div>
 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="portfolio_gallery_project_showcase.html" class="text-text-secondary hover:text-primary transition-smooth font-medium">Portfolio</a>
-                        <a href="about_jinsho_cultural_design_journey.html" class="text-text-secondary hover:text-primary transition-smooth font-medium">About Me</a>
-                        <a href="services_process_comprehensive_design_solutions.html" class="text-text-secondary hover:text-primary transition-smooth font-medium">Services</a>
-                        <a href="3d_visualization_showcase_bringing_concepts_to_life.html" class="text-primary font-medium border-b-2 border-primary">3D Visualization</a>
-                        
-                    </div>
+            <!-- Desktop Navigation -->
+            <div style="display: none;" id="desktop-nav">
+                <div style="display: flex; gap: 30px;">
+                    <a href="portfolio_gallery_project_showcase.html" style="color: #666; text-decoration: none; font-weight: 500; padding: 10px 0;">Portfolio</a>
+                    <a href="about_jinsho_cultural_design_journey.html" style="color: #666; text-decoration: none; font-weight: 500; padding: 10px 0;">About Me</a>
+                    <a href="services_process_comprehensive_design_solutions.html" style="color: #666; text-decoration: none; font-weight: 500; padding: 10px 0;">Services</a>
+                    <a href="../JINSHO CV.pdf" target="_blank" style="color: #666; text-decoration: none; font-weight: 500; padding: 10px 0;">View CV</a>
                 </div>
+            </div>
 
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button class="text-text-secondary hover:text-primary p-2">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
+            <!-- Mobile Menu Button -->
+            <div style="display: block;" id="mobile-menu-btn">
+                <button onclick="toggleMenu()" style="background: none; border: none; cursor: pointer; padding: 10px;">
+                    <svg id="hamburger" style="width: 24px; height: 24px; color: #8B4513;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                    <svg id="close-btn" style="width: 24px; height: 24px; color: #8B4513; display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-overlay" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 9999; display: none;">
+        <div style="position: absolute; top: 70px; left: 0; right: 0; background: white; padding: 30px 20px;">
+            <a href="portfolio_gallery_project_showcase.html" style="display: block; padding: 20px 0; color: #8B4513; text-decoration: none; font-size: 18px; font-weight: 600; border-bottom: 1px solid #eee;">Portfolio</a>
+            <a href="about_jinsho_cultural_design_journey.html" style="display: block; padding: 20px 0; color: #8B4513; text-decoration: none; font-size: 18px; font-weight: 600; border-bottom: 1px solid #eee;">About Me</a>
+            <a href="services_process_comprehensive_design_solutions.html" style="display: block; padding: 20px 0; color: #8B4513; text-decoration: none; font-size: 18px; font-weight: 600; border-bottom: 1px solid #eee;">Services</a>
+            <a href="../JINSHO CV.pdf" target="_blank" style="display: block; padding: 20px 0; color: #8B4513; text-decoration: none; font-size: 18px; font-weight: 600;">View CV</a>
+        </div>
+    </div>
+
     <!-- Hero Section -->
-    <section class="pt-24 pb-16 bg-gradient-to-br from-primary/5 to-secondary/5">
+    <section class="pt-24 pb-16 bg-gradient-to-br from-primary/5 to-secondary/5" style="margin-top: 70px;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-4xl mx-auto">
                 <span class="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6">
@@ -613,8 +623,7 @@
                         <li><a href="portfolio_gallery_project_showcase.html" class="text-gray-300 hover:text-secondary transition-smooth">Portfolio</a></li>
                         <li><a href="about_jinsho_cultural_design_journey.html" class="text-gray-300 hover:text-secondary transition-smooth">About Me</a></li>
                         <li><a href="services_process_comprehensive_design_solutions.html" class="text-gray-300 hover:text-secondary transition-smooth">Services</a></li>
-                        <li><a href="3d_visualization_showcase_bringing_concepts_to_life.html" class="text-gray-300 hover:text-secondary transition-smooth">3D Visualization</a></li>
-                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-secondary transition-smooth">Contact</a></li>
+                       <li><a href="javascript:void(0)" class="text-gray-300 hover:text-secondary transition-smooth">Contact</a></li>
                     </ul>
                 </div>
 
@@ -700,7 +709,53 @@
                 img.style.transition = 'opacity 0.3s ease-in-out';
             });
         });
+
+        // Simple mobile menu toggle
+        function toggleMenu() {
+            console.log('toggleMenu called');
+            const overlay = document.getElementById('mobile-overlay');
+            const hamburger = document.getElementById('hamburger');
+            const closeBtn = document.getElementById('close-btn');
+            
+            if (overlay.style.display === 'none' || overlay.style.display === '') {
+                // Show menu
+                overlay.style.display = 'block';
+                hamburger.style.display = 'none';
+                closeBtn.style.display = 'block';
+                console.log('Menu opened - overlay should be visible');
+            } else {
+                // Hide menu
+                overlay.style.display = 'none';
+                hamburger.style.display = 'block';
+                closeBtn.style.display = 'none';
+                console.log('Menu closed');
+            }
+        }
+
+        // Close menu when clicking overlay
+        document.getElementById('mobile-overlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                toggleMenu();
+            }
+        });
+
+        // Show/hide desktop nav based on screen size
+        function checkScreenSize() {
+            const desktopNav = document.getElementById('desktop-nav');
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            
+            if (window.innerWidth >= 768) {
+                desktopNav.style.display = 'block';
+                mobileBtn.style.display = 'none';
+            } else {
+                desktopNav.style.display = 'none';
+                mobileBtn.style.display = 'block';
+            }
+        }
+
+        // Check on load and resize
+        window.addEventListener('load', checkScreenSize);
+        window.addEventListener('resize', checkScreenSize);
     </script>
-<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
 </body>
 </html>
